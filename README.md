@@ -1,5 +1,7 @@
 # tpp-ctv3
 
+Extracts CTV3 codes plus TPP extensions for use in OpenCodelists.
+
 [View on OpenSAFELY](https://jobs.opensafely.org/repo/https%253A%252F%252Fgithub.com%252Fopensafely%252Ftpp-ctv3)
 
 Details of the purpose and any published outputs from this project can be found at the link above.

@@ -1,12 +1,32 @@
-version: '3.0'
+version: "3.0"
 
 expectations:
   population_size: 1000
 
 actions:
-
-  generate_study_population:
-    run: cohortextractor:latest generate_cohort --study-definition study_definition
+  extract_ctv3_dictionary:
+    run: >
+      sqlrunner:latest
+        --output output/ctv3_dictionary.csv
+        analysis/extract_ctv3_dictionary.sql
     outputs:
       highly_sensitive:
-        cohort: output/input.csv
+        rows: output/ctv3_dictionary.csv
+
+  extract_ctv3_hierarchy:
+    run: >
+      sqlrunner:latest
+        --output output/ctv3_hierarchy.csv
+        analysis/extract_ctv3_hierarchy.sql
+    outputs:
+      highly_sensitive:
+        rows: output/ctv3_hierarchy.csv
+  
+  check_ctv3_events:
+    run: >
+      sqlrunner:latest
+        --output output/coded_events_with_missing_ctv3_codes.csv
+        analysis/check_ctv3_events.sql
+    outputs:
+      highly_sensitive:
+        rows: output/ctv3_hierarchy.csv
