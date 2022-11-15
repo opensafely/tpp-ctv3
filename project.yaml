@@ -10,7 +10,7 @@ actions:
         --output output/ctv3_dictionary.csv
         analysis/extract_ctv3_dictionary.sql
     outputs:
-      highly_sensitive:
+      moderately_sensitive:
         rows: output/ctv3_dictionary.csv
 
   extract_ctv3_hierarchy:
@@ -19,7 +19,7 @@ actions:
         --output output/ctv3_hierarchy.csv
         analysis/extract_ctv3_hierarchy.sql
     outputs:
-      highly_sensitive:
+      moderately_sensitive:
         rows: output/ctv3_hierarchy.csv
   
   check_ctv3_events:
