@@ -1,0 +1,3 @@
+[tool.sqlfluff.core]
+dialect = "tsql"
+exclude_rules = "L014"
