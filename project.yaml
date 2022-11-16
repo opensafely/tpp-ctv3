@@ -29,4 +29,4 @@ actions:
         analysis/check_ctv3_events.sql
     outputs:
       highly_sensitive:
-        rows: output/ctv3_hierarchy.csv
+        rows: output/coded_events_with_missing_ctv3_codes.csv
