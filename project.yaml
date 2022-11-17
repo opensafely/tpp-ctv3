@@ -13,6 +13,13 @@ actions:
       moderately_sensitive:
         rows: output/ctv3_dictionary.csv
 
+  gzip_ctv3_dictionary:
+    run: python:latest gzip output/ctv3_dictionary.csv
+    needs: [extract_ctv3_dictionary]
+    outputs:
+      moderately_sensitive:
+        gz_file: output/ctv3_dictionary.csv.gz
+
   extract_ctv3_hierarchy:
     run: >
       sqlrunner:latest
@@ -22,6 +29,13 @@ actions:
       moderately_sensitive:
         rows: output/ctv3_hierarchy.csv
   
+  gzip_ctv3_hierarchy:
+    run: python:latest gzip output/ctv3_hierarchy.csv
+    needs: [extract_ctv3_hierarchy]
+    outputs:
+      moderately_sensitive:
+        gz_file: output/ctv3_hierarchy.csv.gz
+
   check_ctv3_events:
     run: >
       sqlrunner:latest
